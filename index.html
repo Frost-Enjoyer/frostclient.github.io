@@ -61,7 +61,7 @@
             font-weight: 400;
             color: rgb(0, 180, 255);
             margin-bottom: 20px;
-            text-shadow: 0 0 30px rgba(0, 180, 255, 0.5);
+            text-shadow: 0 0 30px rgba(0, 180, 255, 0.5), 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
         }
         
         .subtitle {
@@ -69,6 +69,7 @@
             color: #ffffff;
             margin-bottom: 10px;
             font-weight: 400;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
         }
         
         .subtitle .highlight {
@@ -79,6 +80,7 @@
             font-size: 1rem;
             color: #9ca3af;
             margin-bottom: 30px;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
         }
         
         .badge .free-now-paid-soon {
@@ -96,6 +98,7 @@
             font-size: 1.1rem;
             transition: all 0.2s;
             margin-top: 10px;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
         }
         
         .discord-btn:hover {
@@ -116,6 +119,7 @@
             font-weight: 400;
             margin-bottom: 30px;
             color: #ffffff;
+            text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
         }
         
         .left-section h2 .highlight {
@@ -128,6 +132,7 @@
             margin-bottom: 30px;
             line-height: 1.8;
             font-weight: 400;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
         }
         
         .license-key-container {
@@ -137,6 +142,7 @@
         .license-key-container p {
             margin-bottom: 10px;
             color: #ffffff;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
         }
         
         .license-key-input {
@@ -150,6 +156,7 @@
             font-size: 1rem;
             outline: none;
             transition: all 0.2s;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
         }
         
         .license-key-input:focus {
@@ -169,6 +176,7 @@
             transition: all 0.2s;
             margin-bottom: 15px;
             text-align: center;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
         }
         
         .download-primary:hover {
@@ -189,6 +197,7 @@
             gap: 8px;
             color: #ffffff;
             font-size: 0.9rem;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
         }
         
         .feature-badge::before {
@@ -207,8 +216,16 @@
         .screenshot-container {
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(0, 180, 255, 0.2);
+            border: 1px solid rgba(0, 180, 255, 0.3);
             box-shadow: 0 20px 60px rgba(0, 180, 255, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .screenshot-container:hover {
+            border: 2px solid rgb(0, 180, 255);
+            box-shadow: 0 20px 60px rgba(0, 180, 255, 0.3);
+            transform: scale(1.02);
         }
         
         .screenshot-container img {
@@ -228,6 +245,7 @@
             font-weight: 400;
             color: rgb(0, 180, 255);
             margin-bottom: 40px;
+            text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
         }
         
         .faq-btn {
@@ -241,6 +259,7 @@
             font-size: 1.1rem;
             transition: all 0.2s;
             border: 1px solid rgb(0, 180, 255);
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
         }
         
         .faq-btn:hover {
@@ -297,7 +316,7 @@
                 <h2>Download Now</h2>
                 
                 <div class="license-key-container">
-                    <p>License Key</p>
+                    <p>License Key:</p>
                     <input type="text" class="license-key-input" placeholder="0000-0000-0000" value="0000-0000-0000">
                 </div>
                 
