@@ -1,2 +1,2 @@
-# frostclient.github.io
-Frost Client
+## Frost Client
+https://discord.gg/ZpuVPUEvHb
