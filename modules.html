@@ -22,7 +22,6 @@
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-            text-align: center;
         }
         
         .container {
@@ -51,6 +50,7 @@
             margin-bottom: 10px;
             font-weight: 400;
             text-transform: uppercase;
+            text-align: center;
         }
         
         .search-container {
@@ -85,7 +85,7 @@
         
         .category-header {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             margin-bottom: 30px;
         }
@@ -94,6 +94,7 @@
             font-size: 2.5rem;
             font-weight: 400;
             color: rgb(0, 180, 255);
+            image-rendering: pixelated;
         }
 
         .modules-grid {
@@ -133,6 +134,7 @@
             font-size: 1.1rem;
             color: #ffffff;
             image-rendering: pixelated;
+            text-align: center;
         }
 
         .module-description {
@@ -149,7 +151,7 @@
 
         .module-wrapper:hover .module-description {
             opacity: 1;
-            max-height: 60px;
+            max-height: 80px;
             margin-top: 5px;
         }
 
@@ -160,6 +162,7 @@
         @media (max-width: 1024px) {
             h1 { font-size: 3.5rem; }
             .subtitle { font-size: 2rem; }
+            .category-title { font-size: 2rem; }
         }
     </style>
 </head>
