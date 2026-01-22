@@ -186,6 +186,8 @@
         .screenshot-container img {
             width: 100%;
             display: block;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
         }
         
         .bottom-section {
@@ -207,8 +209,8 @@
             padding: 12px 28px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 400;
+            font-size: 1.1rem;
             transition: all 0.2s;
             border: 1px solid rgb(0, 180, 255);
         }
@@ -293,11 +295,10 @@
         
         <section class="bottom-section">
             <h2>Why Choose Frost Client?</h2>
-            <a href="/faq" class="faq-btn">Read FAQ & Terms</a>
+            <a href="./faq.html" class="faq-btn">Read FAQ & Terms</a>
         </section>
         
         <footer>
-            <p class="footer-credit">Built with v0 ×</p>
         </footer>
     </div>
 </body>
