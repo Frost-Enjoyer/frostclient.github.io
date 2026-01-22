@@ -280,25 +280,27 @@
     </div>
 
     <script>
-        document.getElementById('moduleSearch').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const categories = document.querySelectorAll('.category');
+        const searchInput = document.getElementById('moduleSearch');
+        const categories = document.querySelectorAll('.category');
+
+        searchInput.addEventListener('input', (e) => {
+            const filter = e.target.value.toLowerCase();
 
             categories.forEach(category => {
                 const modules = category.querySelectorAll('.module-card');
-                let hasVisibleModules = false;
+                let matchInUnderlyingModules = false;
 
                 modules.forEach(module => {
-                    const moduleName = module.querySelector('.module-name').textContent.toLowerCase();
-                    if (moduleName.includes(searchTerm)) {
+                    const name = module.querySelector('.module-name').textContent.toLowerCase();
+                    if (name.includes(filter)) {
                         module.classList.remove('hidden');
-                        hasVisibleModules = true;
+                        matchInUnderlyingModules = true;
                     } else {
                         module.classList.add('hidden');
                     }
                 });
 
-                if (hasVisibleModules) {
+                if (matchInUnderlyingModules) {
                     category.classList.remove('hidden');
                 } else {
                     category.classList.add('hidden');
