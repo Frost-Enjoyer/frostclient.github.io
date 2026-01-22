@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frost Client - Modules</title>
+    <title>Frost Client</title>
     <link rel="icon" type="image/png" href="./Frost-Logo.png">
     <link href="https://fonts.cdnfonts.com/css/minecraft-ten" rel="stylesheet">
     <style>
@@ -15,7 +15,7 @@
         
         body {
             font-family: 'Minecraft Ten', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #131313;
+            background: #0f0f0f;
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
@@ -26,13 +26,26 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
-        h1 {
+
+        .header-section {
             text-align: center;
-            font-size: 3rem;
-            font-weight: 400;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+        }
+
+        .client-title {
+            font-size: 5rem;
+            color: #00b4ff;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 180, 255, 0.7);
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .module-list-subtitle {
+            font-size: 1.2rem;
             color: #ffffff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         
         .search-container {
@@ -53,40 +66,62 @@
         .search-input {
             width: 100%;
             padding: 16px 20px 16px 50px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            border-radius: 50px;
             color: #ffffff;
             font-family: 'Minecraft Ten', sans-serif;
             font-size: 1rem;
             outline: none;
-            transition: all 0.2s;
+            transition: all 0.3s;
         }
         
         .search-input:focus {
-            border-color: rgba(0, 180, 255, 0.5);
-            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 0, 0, 0.4);
+            background: rgba(255, 0, 0, 0.05);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
         }
         
         .category {
             margin-bottom: 60px;
+        }
+
+        .category-combat .category-title, 
+        .category-combat .category-icon {
+            color: #ff0000;
+        }
+
+        .category-combat .module-card {
+            background: rgba(255, 0, 0, 0.03);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+        }
+
+        .category-combat .module-card:hover {
+            background: rgba(255, 0, 0, 0.08);
+            border-color: #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .category-combat .module-icon {
+            color: #ff0000;
         }
         
         .category-header {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 24px;
+            margin-bottom: 15px;
         }
-        
-        .category-icon {
-            font-size: 1.5rem;
+
+        .category-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 25px;
         }
         
         .category-title {
             font-size: 2rem;
             font-weight: 400;
-            color: #ffffff;
         }
         
         .modules-grid {
@@ -109,19 +144,18 @@
         
         .module-card:hover {
             background: rgba(0, 180, 255, 0.1);
-            border-color: rgba(0, 180, 255, 0.4);
+            border-color: #00b4ff;
             transform: translateY(-2px);
         }
         
         .module-icon {
             font-size: 1.2rem;
-            color: rgb(0, 180, 255);
+            color: #00b4ff;
         }
         
         .module-name {
             font-size: 1rem;
             color: #ffffff;
-            font-weight: 400;
         }
 
         .hidden {
@@ -129,7 +163,7 @@
         }
         
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
+            .client-title { font-size: 3rem; }
             .category-title { font-size: 1.5rem; }
             .modules-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
         }
@@ -137,18 +171,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>Module Library</h1>
+        <div class="header-section">
+            <h1 class="client-title">Frost Client</h1>
+            <p class="module-list-subtitle">Module List</p>
+        </div>
         
         <div class="search-container">
             <span class="search-icon">🔍</span>
             <input type="text" id="moduleSearch" class="search-input" placeholder="Search modules...">
         </div>
         
-        <div class="category">
+        <div class="category category-combat">
             <div class="category-header">
-                <span class="category-icon">🔥</span>
+                <span class="category-icon">⚔️</span>
                 <h2 class="category-title">Combat</h2>
             </div>
+            <div class="category-divider"></div>
             <div class="modules-grid">
                 <div class="module-card">
                     <span class="module-icon">🎯</span>
@@ -159,80 +197,20 @@
                     <span class="module-name">AnchorMacro</span>
                 </div>
                 <div class="module-card">
-                    <span class="module-icon">⚓</span>
-                    <span class="module-name">AnchorMacro v2</span>
-                </div>
-                <div class="module-card">
                     <span class="module-icon">💎</span>
                     <span class="module-name">AutoCrystal</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">👊</span>
-                    <span class="module-name">AutoDoubleHand</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">🍖</span>
-                    <span class="module-name">AutoEat</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">🎆</span>
-                    <span class="module-name">AutoFirework</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">⚡</span>
-                    <span class="module-name">AutoJumpReset</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">📜</span>
-                    <span class="module-name">AutoLog</span>
                 </div>
                 <div class="module-card">
                     <span class="module-icon">🛡️</span>
                     <span class="module-name">AutoTotem</span>
                 </div>
                 <div class="module-card">
-                    <span class="module-icon">💎</span>
-                    <span class="module-name">Crystal Macro</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">✨</span>
-                    <span class="module-name">Crystal Optimizer</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">⚔️</span>
-                    <span class="module-name">DoubleAnchor</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">👻</span>
-                    <span class="module-name">HoverTotem</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">🛡️</span>
-                    <span class="module-name">InvTotem</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">🔄</span>
-                    <span class="module-name">ItemSwap</span>
+                    <span class="module-icon">🎯</span>
+                    <span class="module-name">TriggerBot</span>
                 </div>
                 <div class="module-card">
                     <span class="module-icon">⚔️</span>
                     <span class="module-name">MaceSwap</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">🚫</span>
-                    <span class="module-name">NoInteract</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">⭕</span>
-                    <span class="module-name">PearlThrow</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">🔒</span>
-                    <span class="module-name">SafeAnchor</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">🎯</span>
-                    <span class="module-name">TriggerBot</span>
                 </div>
             </div>
         </div>
@@ -242,11 +220,8 @@
                 <span class="category-icon">👁️</span>
                 <h2 class="category-title">Visual</h2>
             </div>
+            <div class="category-divider"></div>
             <div class="modules-grid">
-                <div class="module-card">
-                    <span class="module-icon">🔄</span>
-                    <span class="module-name">AntiBlockRotate</span>
-                </div>
                 <div class="module-card">
                     <span class="module-icon">📊</span>
                     <span class="module-name">BaseESP</span>
@@ -254,18 +229,6 @@
                 <div class="module-card">
                     <span class="module-icon">🧱</span>
                     <span class="module-name">BlockESP</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">📦</span>
-                    <span class="module-name">ChunkFinder</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">💎</span>
-                    <span class="module-name">CrystalESP</span>
-                </div>
-                <div class="module-card">
-                    <span class="module-icon">➕</span>
-                    <span class="module-name">ExtraESP</span>
                 </div>
                 <div class="module-card">
                     <span class="module-icon">🌟</span>
@@ -288,19 +251,19 @@
 
             categories.forEach(category => {
                 const modules = category.querySelectorAll('.module-card');
-                let matchInUnderlyingModules = false;
+                let hasMatch = false;
 
                 modules.forEach(module => {
                     const name = module.querySelector('.module-name').textContent.toLowerCase();
                     if (name.includes(filter)) {
                         module.classList.remove('hidden');
-                        matchInUnderlyingModules = true;
+                        hasMatch = true;
                     } else {
                         module.classList.add('hidden');
                     }
                 });
 
-                if (matchInUnderlyingModules) {
+                if (hasMatch) {
                     category.classList.remove('hidden');
                 } else {
                     category.classList.add('hidden');
